@@ -46,7 +46,7 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-    if (sending) {
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
