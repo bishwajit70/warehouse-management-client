@@ -4,8 +4,6 @@ import auth from '../../../firebase.init';
 
 const AddNewItem = () => {
     const [user, loading, error] = useAuthState(auth);
-    // console.log(user.email);
-    // const email = user.email;
     const handleAddNewItem = event => {
         event.preventDefault()
         const name = event.target.name.value;
