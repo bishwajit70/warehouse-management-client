@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SingleProduct = ({ product}) => {
-    const { _id, name, picture, price, description, quantity, supplierName } = product
+    const { _id, name, picture, price, description, quantity, supplier } = product
     const navigate = useNavigate()
 
     const handleUpadate = (id) => {
@@ -19,7 +19,7 @@ const SingleProduct = ({ product}) => {
                 <p className=''>Desciption: {description}</p>
                 <h3 className='font-bold'>Price: {price}</h3>
                 <h2 className='font-bold'>Quantity: {quantity}</h2>
-                <h2 className='font-bold mb-2'>Supplier Name: {supplierName}</h2>
+                <h2 className='font-bold mb-2'>Supplier Name: {supplier}</h2>
                 <button className='bg-purple-500 py-3 px-5 rounded duration-700 hover:bg-purple-700 text-white' onClick={() => handleUpadate(_id)}>UPDATE</button>
             </div>
         </div>
