@@ -44,7 +44,7 @@ const Register = () => {
     }
 
     return (
-        <div className='w-5/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
+        <div className='w-11/12 md:w-3/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
             <h2 className='text-4xl text-blue-600 font-bold pb-5'>Please Register</h2>
             <form onSubmit={handleCreateUser} className='w-11/12 py-5  grid mx-auto'>
 
