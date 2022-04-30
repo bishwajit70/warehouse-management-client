@@ -18,7 +18,7 @@ const ManageInventory = () => {
         const proceed = window.confirm('Are you sure to delete the Item?');
         if (proceed) {
             // console.log('deleting Event with,', id)
-            const url = `https://frozen-inlet-73952.herokuapp.com/${id}`
+            const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -38,7 +38,7 @@ const ManageInventory = () => {
 
     return (
         <div className='pt-5'>
-             <Link to='/addnewitem' className='bg-purple-500 py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700 '>Add New Item</Link>
+            <Link to='/addnewitem' className='bg-purple-500 py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700 '>Add New Item</Link>
             {
                 products.map(product => <ManageInventoryProduct
                     key={product._id}
@@ -46,7 +46,7 @@ const ManageInventory = () => {
                     handleDeleteInventoryItem={handleDeleteInventoryItem}
                 ></ManageInventoryProduct>)
             }
-           
+
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const ManageInventoryProduct = (props) => {
     const { _id, name, picture, price, description, quantity, supplier } = props.product;
@@ -15,7 +15,6 @@ const ManageInventoryProduct = (props) => {
                 <p className='w-48'>Description: <small>{description}</small></p>
                 <p>Quantity : <small>{quantity}</small></p>
                 <p>Supplier : <small>{supplier}</small></p>
-
 
                 <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white rounded duration-700 hover:bg-red-600'>DELETE</button>
 
