@@ -3,11 +3,15 @@ import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/a
 import auth from '../../../firebase.init';
 import { GrGoogle } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+    const navigate = useNavigate()
     const [signInWithGoogle, googleUser, googleLoading, GoogleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
-
+    if(googleUser || githubUser){
+        navigate('/')
+    }
 
     return (
         <div className='pb-5 w-11/12 mx-auto'>

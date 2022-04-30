@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import Loading from '../Loading/Loading';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-
+    const location = useLocation()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
+
+
+
 
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        createUserError,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
     const handleEmailBlur = event => {
         setEmail(event.target.value)
@@ -29,9 +37,29 @@ const Login = () => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password)
     }
+
+
+
+    let from = location.state?.from?.pathname || "/";
+
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
+
+    if (sending) {
+        return <Loading></Loading>
+    }
+
+    const resetPassword = async () => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        } else {
+            toast('Please enter your email address')
+        }
+
+    }
+
     return (
         <div className='w-5/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
             <h2 className='text-4xl text-blue-600 font-bold pb-5'>Please Login</h2>
@@ -50,8 +78,14 @@ const Login = () => {
                     <div className='bg-blue-600 w-1/2 md:w-2/5 h-0.5'></div>
                 </div>
             </form>
-            <SocialLogin></SocialLogin>
+            <div className='grid my-2 text-left w-full md:w-4/5 mx-auto'>
+                <input onClick={resetPassword}
+                    className='cursor-pointer duration-700 bg-orange-500 hover:bg-orange-600 text-white font-semibold uppercase p-2 rounded' type="submit" value="Reset Password" />
 
+            </div>
+            <SocialLogin></SocialLogin>
+            
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

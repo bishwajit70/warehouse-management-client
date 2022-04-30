@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import CustomLink from '../CustomLink/CustomLink';
 
 
 const HeaderArea = () => {
@@ -12,15 +13,20 @@ const HeaderArea = () => {
 
     const handleSignOut = () => {
         signOut(auth)
-        navigate('/')
+        navigate('/login')
     }
 
 
     return (
-        <div>
-            <Link to='/'>Home</Link>
+        <div className='border-b-2 flex items-center justify-center py-5'>
+            <CustomLink className='uppercase p-2' to='/'>Home</CustomLink>
+
             {
-                user ? <Link onClick={handleSignOut} className='p-5' to='/'>Sign Out</Link> : <Link className='p-5' to='/login'>Login</Link>
+                user ? <CustomLink className='p-2' to='/manageinventory'>Manage Inventory</CustomLink> : ""
+            }
+
+            {
+                user ? <Link onClick={handleSignOut} className='p-2 uppercase' to='/'>Sign Out</Link> : <Link className='p-2 uppercase' to='/login'>Login</Link>
             }
 
 
