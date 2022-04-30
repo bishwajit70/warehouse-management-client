@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ManageInventoryProduct = ({ product }) => {
-    const { _id, name, picture, price, description, quantity, supplierName } = product
+const ManageInventoryProduct = (props) => {
+    const { _id, name, picture, price, description, quantity, supplier } = props.product;
+    const handleDeleteInventoryItem = props.handleDeleteInventoryItem
+
+
     return (
         <div className='mt-10'>
             <div className='flex bg-purple-50 rounded-md mx-20 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
@@ -11,8 +14,12 @@ const ManageInventoryProduct = ({ product }) => {
                 <p>Price : <small>{price}</small></p>
                 <p className='w-48'>Description: <small>{description}</small></p>
                 <p>Quantity : <small>{quantity}</small></p>
-                <p>Supplier : <small>{supplierName}</small></p>
-                <button className='bg-purple-500 py-3 px-5 text-white rounded duration-700 hover:bg-red-600'>DELETE</button>
+                <p>Supplier : <small>{supplier}</small></p>
+
+
+                <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white rounded duration-700 hover:bg-red-600'>DELETE</button>
+
+
             </div>
         </div>
     );
