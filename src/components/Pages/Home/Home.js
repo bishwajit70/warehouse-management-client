@@ -9,7 +9,7 @@ const Home = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        const url = 'http://localhost:5000/inventory'
+        const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))

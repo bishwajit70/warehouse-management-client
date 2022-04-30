@@ -17,7 +17,7 @@ const AddNewItem = () => {
         const inventoryItem = { name, price, description, quantity, supplier, picture }
         console.log(inventoryItem);
         // send event to the server
-        fetch('http://localhost:5000/inventory', {
+        fetch('https://frozen-inlet-73952.herokuapp.com/inventory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ const AddNewItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                alert("Event Added Successfully.");
+                alert("Item Added Successfully.");
                 event.target.reset();
             })
     }

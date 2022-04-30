@@ -7,7 +7,7 @@ const ManageInventory = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        const url = 'http://localhost:5000/inventory'
+        const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -15,10 +15,10 @@ const ManageInventory = () => {
 
     const handleDeleteInventoryItem = (id) => {
         // console.log(id);
-        const proceed = window.confirm('Are you sure to delete the Event?');
+        const proceed = window.confirm('Are you sure to delete the Item?');
         if (proceed) {
             // console.log('deleting Event with,', id)
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://frozen-inlet-73952.herokuapp.com/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
