@@ -71,8 +71,6 @@ const Login = () => {
 
                 <input className='p-2 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700 cursor-pointer border-blue-700 rounded' type="submit" value="Login" />
 
-                <input className='p-2 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700  cursor-pointer border-blue-700 rounded' type="submit" value="Register" />
-
                 <p className='text-xl'>Don't have an account? <Link className='text-blue-700 text-xl' to='/register'>Register</Link></p>
                 <div className='w-100 py-2 px-2 md:px-10 flex w-full items-center justify-around'>
                     <div className='bg-blue-600 w-1/2 md:w-2/5 h-0.5'></div>
@@ -80,7 +78,7 @@ const Login = () => {
                     <div className='bg-blue-600 w-1/2 md:w-2/5 h-0.5'></div>
                 </div>
             </form>
-            
+
             <input onClick={resetPassword} className='p-2 w-11/12 p-2 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700 cursor-pointer border-blue-700 rounded' type="submit" value="Reset Password" />
             <SocialLogin></SocialLogin>
             <ToastContainer></ToastContainer>

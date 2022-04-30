@@ -3,7 +3,7 @@ import React from 'react';
 const ManageInventoryProduct = ({ product }) => {
     const { _id, name, picture, price, description, quantity, supplierName } = product
     return (
-        <div>
+        <div className='mt-10'>
             <div className='flex bg-purple-50 rounded-md mx-20 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
                 <img className='w-20 p-1' src={picture} alt="" />
                 <h2>Name : <small>{name}</small></h2>

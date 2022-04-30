@@ -11,6 +11,7 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [passwordError, setPasswoardError] = useState('')
     const navigate = useNavigate()
+    let errorElement;
 
     const [
         createUserWithEmailAndPassword,
@@ -53,7 +54,8 @@ const Register = () => {
                 <input onBlur={handlePasswordBlur} className='p-2 border-2 mb-5 border-indigo-300 rounded' type="password" name="password" id="password" required placeholder='Password' />
 
                 <input onBlur={handleConfirmPasswordBlur} className='p-2 border-2 mb-5 border-indigo-300 rounded' type="password" name="ConfirmPassword" id="ConfirmPassword" required placeholder='Confirm Password' />
-                {passwordError}
+
+                <p className='text-red-600'>{passwordError}</p>
 
                 <input className='p-2 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700  cursor-pointer border-blue-700 rounded' type="submit" value="Register" />
 

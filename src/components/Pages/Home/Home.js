@@ -5,7 +5,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 const Home = () => {
     const [products] = useProduct()
 
-    console.log(products)
+    // console.log(products)
 
 
     const homeProducts = products.slice(0, 6)
