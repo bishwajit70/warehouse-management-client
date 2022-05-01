@@ -24,7 +24,7 @@ const Home = () => {
     const homeProducts = products.slice(0, 6)
 
     return (
-        <div className='grid grid-cols-1 p-3 gap-10 mx-40 justify-center items-center'>
+        <div className='px-5 py-10 md:px-5 lg:px-10 xl:px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-y-10 gap-20'>
             {
 
                 homeProducts.map(product => <SingleProduct

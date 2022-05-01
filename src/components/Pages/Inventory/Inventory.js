@@ -19,13 +19,15 @@ const Inventory = () => {
 
     let { _id, name, picture, price, description, quantity, supplier } = product
 
-
+    
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
         const quantity = event.target.quantity.value;
 
         const updatedQuantity = { quantity };
+
+        
 
         // Update data to the server
 
