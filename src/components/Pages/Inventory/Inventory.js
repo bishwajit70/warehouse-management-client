@@ -11,7 +11,7 @@ const Inventory = () => {
 
     useEffect(() => {
 
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://frozen-inlet-73952.herokuapp.com/inventory${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -29,7 +29,7 @@ const Inventory = () => {
 
         // Update data to the server
 
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://frozen-inlet-73952.herokuapp.com/inventory${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
