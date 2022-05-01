@@ -10,34 +10,67 @@ const Inventory = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
+
         const url = `http://localhost:5000/inventory/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [id]);
 
-    let { name, picture, price, description, quantity, supplier } = product
+    let { _id, name, picture, price, description, quantity, supplier } = product
 
-    // // let [newQuantity, setNewQuantity] = useState(quantity)
 
-    // let newQuantity = quantity;
-    // // let [newQuantity, setNewQuantity]  = useState(0);
+    const handleUpdateQuantity = event => {
+        event.preventDefault()
 
-    // const handleAddQuantity = () => {
-    //     // setNewQuantity(quantity)
+        const quantity = event.target.quantity.value;
+        
+        const updatedQuantity = { quantity };
+
+        // Update data to the server
+
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                alert("Quantity Updated Successfully.");
+                event.target.reset();
+            })
+    }
+
+    // const handleDelivery = event => {
+    //     event.preventDefault()
+    //     const previousQty = quantity;
+
+    //     const quantity = previousQty-1;
+
+    //     const updatedQuantity = { quantity };
+
+    //     // Update data to the server
+
+    //     const url = `http://localhost:5000/inventory/${id}`;
+    //     fetch(url, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(updatedQuantity)
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             alert("Quantity Updated Successfully.");
+    //             event.target.reset();
+    //         })
+
     // }
-    // // console.log(newQuantity);
-
-    // // const handleDelivered = event => {
-    // //     event.preventDefault();
-    // //     if (changeQuantity < 1) {
-    // //         return false;
-    // //     } else {
-    // //         changeQuantity--;
-    // //         console.log(changeQuantity);
-    // //     }
-
-    // // }
 
 
     return (
@@ -53,8 +86,15 @@ const Inventory = () => {
                     <p>Quantity : <small>{quantity}</small></p>
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
-                        <input className='cursor-pointer py-2 mr-5 p px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Add" />
-                        <input className='cursor-pointer py-2 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Delivered" />
+                        <form>
+                            <input className='cursor-pointer py-2 mr-5 p px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Delivered" />
+                        </form>
+
+                        <form onSubmit={handleUpdateQuantity}>
+                            <input className='border-2' type="number" name="quantity" id="" />
+                            <input className='cursor-pointer py-2 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
+                        </form>
+
                     </div>
 
                 </div>
