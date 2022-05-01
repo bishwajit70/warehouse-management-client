@@ -11,7 +11,7 @@ const Inventory = () => {
 
     useEffect(() => {
 
-        const url = `https://frozen-inlet-73952.herokuapp.com/inventory${id}`;
+        const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -24,12 +24,12 @@ const Inventory = () => {
         event.preventDefault()
 
         const quantity = event.target.quantity.value;
-        
+
         const updatedQuantity = { quantity };
 
         // Update data to the server
 
-        const url = `https://frozen-inlet-73952.herokuapp.com/inventory${id}`;
+        const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
