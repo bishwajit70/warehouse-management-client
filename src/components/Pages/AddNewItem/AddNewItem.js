@@ -30,7 +30,7 @@ const AddNewItem = () => {
             })
     }
     return (
-        <div className='w-4/12 border-2 border-purple-200 rounded mt-10 mx-auto p-2'>
+        <div className='w-11/12 md:w-3/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
             <h2 className='text-2xl pb-8 font-bold pt-5'>Add New Item</h2>
             <form className='grid grid-cols-1 w-11/12 mx-auto' onSubmit={handleAddNewItem}>
 

@@ -7,19 +7,24 @@ const ManageInventoryProduct = (props) => {
 
     return (
         <div className='mt-10'>
-            <div className='flex bg-purple-50 rounded-md mx-20 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
-                <img className='w-20 p-1' src={picture} alt="" />
-                <h2>Name : <small>{name}</small></h2>
-                <p>Id : <small>{_id}</small></p>
-                <p>Price : <small>{price}</small></p>
-                <p className='w-48'>Description: <small>{description}</small></p>
-                <p>Quantity : <small>{quantity}</small></p>
-                <p>Supplier : <small>{supplier}</small></p>
-
-                <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white rounded duration-700 hover:bg-red-600'>DELETE</button>
-
+            <div className='bg-purple-200 rounded-md p-5 gap-6 md:flex justify-start items-center'>
+                <img className='md:w-2/6' src={picture} alt="" />
+                <div className='md:w-3/4'>
+                    <h2 className='font-bold'>Name : <span className='font-normal'>{name}</span></h2>
+                    <p className='font-bold'>Id : <span className='font-normal'>{_id}</span></p>
+                    <p className='font-bold'>Price : <span className='font-normal'>{price}</span></p>
+                </div>
+                <div className='md:w-3/4'>
+                    <p className='font-bold'>Description: <span className='font-normal'>{description}</span></p>
+                    <p className='font-bold'>Quantity : <span className='font-normal'>{quantity}</span></p>
+                    <p className='font-bold'>Supplier : <span className='font-normal'>{supplier}</span></p>
+                </div>
+                <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white w-full md:w-2/12 rounded duration-700 hover:bg-red-600'>DELETE</button>
 
             </div>
+
+
+
         </div>
     );
 };

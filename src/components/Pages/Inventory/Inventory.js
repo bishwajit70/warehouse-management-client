@@ -19,7 +19,7 @@ const Inventory = () => {
 
     let { _id, name, picture, price, description, quantity, supplier } = product
 
-    
+
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
@@ -27,7 +27,7 @@ const Inventory = () => {
 
         const updatedQuantity = { quantity };
 
-        
+
 
         // Update data to the server
 
@@ -76,12 +76,12 @@ const Inventory = () => {
 
 
     return (
-        <div>
-            <CustomLink className='bg-purple-500 grid w-3/5 mx-auto  mt-5 text-center py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</CustomLink>
+        <div className='pt-10'>
+            <Link className='bg-purple-500 py-3 px-5 inline-block mb-5  rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link>
 
-            <div className='mx-40 flex flex-start items-center '>
-                <img src={picture} alt="" />
-                <div className='p-10 text-left'>
+            <div className='p-5 w-full border-2 rounded-md pt- md:w-4/12 mx-auto grid grid-cols-1 items-center justify-center '>
+                <img className='w-full pt-5' src={picture} alt="" />
+                <div className='text-left'>
                     <h2>Name : <small>{name}</small></h2>
                     <p>Price : <small>{price}</small></p>
                     <p>Description: <small>{description}</small></p>
@@ -89,13 +89,17 @@ const Inventory = () => {
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
                         <form>
-                            <input className='cursor-pointer py-2 mr-5 p px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Delivered" />
+                            <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
                         </form>
+                        <div className='grid pt-5 grid-cols-1'>
+                            <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
+                            <form onSubmit={handleUpdateQuantity}>
+                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" />
+                                <br />
+                                <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
+                            </form>
+                        </div>
 
-                        <form onSubmit={handleUpdateQuantity}>
-                            <input className='border-2' type="number" name="quantity" id="" />
-                            <input className='cursor-pointer py-2 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
-                        </form>
 
                     </div>
 
