@@ -1,11 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import auth from '../../../../firebase.init';
 
-const AddNewItem = () => {
+const AddItem = () => {
     const [user, loading, error] = useAuthState(auth);
 
-    const handleAddNewItem = event => {
+    const handleAddMyItem = event => {
         event.preventDefault()
         const name = event.target.name.value;
         const price = event.target.price.value;
@@ -29,14 +29,19 @@ const AddNewItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                alert("Item Added Successfully.");
+                alert("My Item Added Successfully.");
                 event.target.reset();
             })
     }
+
+
+
     return (
+
+
         <div className='w-11/12 md:w-3/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
-            <h2 className='text-2xl pb-8 font-bold pt-5'>Add New Item</h2>
-            <form className='grid grid-cols-1 w-11/12 mx-auto' onSubmit={handleAddNewItem}>
+            <h2 className='text-2xl pb-8 font-bold pt-5'>Add My Item</h2>
+            <form onSubmit={handleAddMyItem} className='grid grid-cols-1 w-11/12 mx-auto' >
 
                 <input className='p-2 border-2 mb-4 rounded border-purple-200' type="text" name="name" id="name" placeholder='Item Name' required />
 
@@ -54,7 +59,8 @@ const AddNewItem = () => {
 
             </form>
         </div>
+
     );
 };
 
-export default AddNewItem;
+export default AddItem;

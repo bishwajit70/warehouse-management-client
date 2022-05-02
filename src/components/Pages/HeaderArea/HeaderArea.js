@@ -19,7 +19,17 @@ const HeaderArea = () => {
 
     return (
         <div className='border-b-2 flex items-center justify-center py-5'>
+            
             <CustomLink className='uppercase p-2' to='/'>Home</CustomLink>
+            {
+                user ? <CustomLink className='p-2' to='/manageitem'>Manage Item</CustomLink> : ""
+            }
+            {
+                user ? <CustomLink className='p-2' to='/additem'>Add Item</CustomLink> : ""
+            }
+            {
+                user ? <CustomLink className='p-2' to='/myitem'>My Item</CustomLink> : ""
+            }
 
             {
                 user ? <CustomLink className='p-2' to='/manageinventory'>Manage Inventory</CustomLink> : ""

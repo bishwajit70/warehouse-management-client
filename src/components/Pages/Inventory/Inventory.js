@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import CustomLink from '../CustomLink/CustomLink';
 
 
 const Inventory = () => {
@@ -99,15 +98,9 @@ const Inventory = () => {
                                 <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
                             </form>
                         </div>
-
-
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
     );
 };

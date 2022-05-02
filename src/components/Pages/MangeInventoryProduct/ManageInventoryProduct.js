@@ -6,7 +6,7 @@ const ManageInventoryProduct = (props) => {
 
 
     return (
-        <div className='mt-10'>
+        <div className='my-2'>
             <div className='bg-purple-200 rounded-md p-5 gap-6 md:flex justify-start items-center'>
                 <img className='md:w-2/6' src={picture} alt="" />
                 <div className='md:w-3/4'>
