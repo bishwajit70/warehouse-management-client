@@ -22,7 +22,13 @@ const Inventory = () => {
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
-        const quantity = event.target.quantity.value;
+        const {quantity, ...rest} = product
+        const newQuantity = event.target.quantity.value;
+        const newProduct = {quantity:newQuantity, ...rest}
+        console.log(newProduct);
+        setProduct(newProduct);
+
+        // const quantity = event.target.quantity.value;
 
         const updatedQuantity = { quantity };
 
