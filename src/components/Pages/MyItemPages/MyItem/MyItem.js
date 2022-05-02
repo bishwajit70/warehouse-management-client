@@ -14,7 +14,7 @@ const MyItem = () => {
     const email = user.email;
 
     useEffect(() => {
-        const url = `https://frozen-inlet-73952.herokuapp.com/?email=${email}`
+        const url = `https://frozen-inlet-73952.herokuapp.com/myitem/?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
