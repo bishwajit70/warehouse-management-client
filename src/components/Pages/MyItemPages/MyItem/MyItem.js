@@ -14,13 +14,13 @@ const MyItem = () => {
     const email = user.email;
 
     useEffect(() => {
-        const url = `http://localhost:5000/myitem/?email=${email}`
+        const url = `https://frozen-inlet-73952.herokuapp.com/?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
-    
+
 
     if (loading) {
         return <Loading></Loading>

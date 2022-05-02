@@ -10,7 +10,7 @@ const ManageItem = () => {
     const email = user.email;
 
     useEffect(() => {
-        const url = `http://localhost:5000/myitem/?email=${email}`
+        const url = `https://frozen-inlet-73952.herokuapp.com/myitem/?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -21,7 +21,7 @@ const ManageItem = () => {
         const proceed = window.confirm('Are you sure to delete the Item?');
         if (proceed) {
             // console.log('deleting Event with,', id)
-            const url = `http://localhost:5000/myitem/${id}`
+            const url = `https://frozen-inlet-73952.herokuapp.com/myitem/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
