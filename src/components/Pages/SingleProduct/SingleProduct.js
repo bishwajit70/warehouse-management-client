@@ -12,10 +12,10 @@ const SingleProduct = ({ product }) => {
 
 
     return (
-        <div className='rounded-lg border border-b-orange-300 border-l-orange-300 shadow-2xl'>
+        <div className='rounded-lg bg-purple-50 border border-b-purple-300 border-l-purple-300 shadow-2xl'>
             <div className='grid grid-flow-row'>
-                <img className='p-2 w-full rounded-tl-md rounded-tr-md' src={picture} alt="" />
-                <div className='text-left p-2 w-full'>
+                <img className='p-4 w-full rounded-tl-md rounded-tr-md' src={picture} alt="" />
+                <div className='text-left p-4 w-full'>
                     <h2 className='text-1xl font-bold pb-1'>Name: {name}</h2>
                     <p className=''>Desciption: {description}</p>
                     <h3 className='font-bold'>Price: {price}</h3>

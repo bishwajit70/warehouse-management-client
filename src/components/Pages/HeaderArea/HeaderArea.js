@@ -21,11 +21,15 @@ const HeaderArea = () => {
     // const [open, setOpen] = useState(false)
 
     return (
-        <div className='p-10 bg-purple-500 text-white'>
+        <div className='p-5 grid md:flex md:px-5 lg:px-10 xl:px-40 justify-around bg-purple-500 text-white sticky top-0 shadow-md shadow-purple-400'>
 
             {/* <div onClick={() => setOpen(!open)} className='w-10 h-10 p-2 md:hidden'>
                 {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
             </div> */}
+
+
+            <h1 className='text-4xl font-semibold'>Spice House</h1>
+
 
             <div className='grid md:flex justify-center mx-auto duration-200 ease-in'>
 

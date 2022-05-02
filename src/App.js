@@ -12,6 +12,7 @@ import AddNewItem from './components/Pages/AddNewItem/AddNewItem';
 import ManageItem from './components/Pages/MyItemPages/MangeItem/ManageItem';
 import AddItem from './components/Pages/MyItemPages/AddItem/AddItem';
 import MyItem from './components/Pages/MyItemPages/MyItem/MyItem';
+import Footer from './components/Pages/Footer/Footer';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

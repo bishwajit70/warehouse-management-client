@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Banner from '../HeaderArea/Banner/Banner';
 import Loading from '../Loading/Loading';
 import SingleProduct from '../SingleProduct/SingleProduct';
+import Discount from './Discount/Discount';
 
 const Home = () => {
 
@@ -36,7 +38,9 @@ const Home = () => {
 
     return (
         <div>
+            <Banner></Banner>
             <div className='px-1 py-10 md:px-5 lg:px-10 xl:px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-y-10 gap-20'>
+                
                 {
 
                     homeProducts.map(product => <SingleProduct
@@ -48,9 +52,9 @@ const Home = () => {
 
             </div>
             {
-                user ? <Link className='bg-purple-500 py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link> : ""
+                user ? <Link className='bg-purple-500 inline-block py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link> : ""
             }
-
+            <Discount></Discount>
 
         </div>
 
