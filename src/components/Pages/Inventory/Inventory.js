@@ -16,19 +16,22 @@ const Inventory = () => {
             .then(data => setProduct(data));
     }, [id]);
 
-    let { _id, name, picture, price, description, quantity, supplier } = product
+    const { _id, name, picture, price, description, quantity, supplier } = product
 
 
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
-        const {quantity, ...rest} = product
-        const newQuantity = event.target.quantity.value;
-        const newProduct = {quantity:newQuantity, ...rest}
-        console.log(newProduct);
-        setProduct(newProduct);
+        // const { quantity , ...rest } = product
+        // console.log(quantity, rest)
+        // const newQuantity = event.target.quantity.value;
+        // // console.log(newProduct);
+        // setProduct(newProduct);
 
-        // const quantity = event.target.quantity.value;
+        const quantity = event.target.quantity.value;
+
+        // const newProduct = { quantity: NewQuantity, ...rest }
+        // setProduct(newProduct);
 
         const updatedQuantity = { quantity };
 
@@ -46,7 +49,7 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 alert("Quantity Updated Successfully.");
                 event.target.reset();
             })
@@ -99,7 +102,7 @@ const Inventory = () => {
                         <div className='grid pt-5 grid-cols-1'>
                             <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
                             <form onSubmit={handleUpdateQuantity}>
-                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" />
+                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' />
                                 <br />
                                 <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
                             </form>

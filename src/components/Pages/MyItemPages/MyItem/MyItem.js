@@ -7,19 +7,20 @@ import SingleProduct from '../../SingleProduct/SingleProduct';
 
 const MyItem = () => {
     const [products, setProducts] = useState([])
-
     const navigate = useNavigate()
-
     const location = useLocation()
+    const [user, loading, error] = useAuthState(auth);
+
+    const email = user.email;
 
     useEffect(() => {
-        const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
+        const url = `http://localhost:5000/myitem/?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
-    const [user, loading, error] = useAuthState(auth);
+    
 
     if (loading) {
         return <Loading></Loading>

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 import ManageInventoryProduct from '../../MangeInventoryProduct/ManageInventoryProduct';
 
 const ManageItem = () => {
     const [products, setProducts] = useState([])
+    const [user, loading, error] = useAuthState(auth);
+    const email = user.email;
 
     useEffect(() => {
-        const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
+        const url = `http://localhost:5000/myitem/?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -17,7 +21,7 @@ const ManageItem = () => {
         const proceed = window.confirm('Are you sure to delete the Item?');
         if (proceed) {
             // console.log('deleting Event with,', id)
-            const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`
+            const url = `http://localhost:5000/myitem/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
