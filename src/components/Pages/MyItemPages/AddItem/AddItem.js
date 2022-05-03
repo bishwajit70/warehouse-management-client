@@ -18,7 +18,7 @@ const AddItem = () => {
         const inventoryItem = { name, price, description, quantity, supplier, picture, email }
         console.log(inventoryItem);
 
-        // send event to the server
+        // send product to the server
         fetch('https://frozen-inlet-73952.herokuapp.com/inventory', {
             method: 'POST',
             headers: {

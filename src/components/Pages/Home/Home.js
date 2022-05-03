@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import BestSale from '../BestSale/BestSale';
+import ContactUs from '../ContactUs/ContactUs';
 import Banner from '../HeaderArea/Banner/Banner';
 import Loading from '../Loading/Loading';
 import SingleProduct from '../SingleProduct/SingleProduct';
@@ -62,6 +63,7 @@ const Home = () => {
             }
             <Discount></Discount>
             <BestSale></BestSale>
+            <ContactUs></ContactUs>
 
         </div>
 
