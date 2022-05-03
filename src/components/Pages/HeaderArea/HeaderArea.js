@@ -27,7 +27,7 @@ const HeaderArea = () => {
                     {open ? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
                 </div>
             </div>
-            <div className={` absolute w-full text-white ${open ? 'top-10' : 'top-[-520px] md:top-0'}`}>
+            <div className={` duration-500 absolute w-full text-white ${open ? 'top-10' : 'top-[-520px] md:top-0'}`}>
                 <div className='bg-purple-500 md:flex md:px-40 justify-between py-10'>
                     <div className=''>
                         <Link to='/'><h1 className='text-4xl font-semibold'>Spice House</h1></Link>
