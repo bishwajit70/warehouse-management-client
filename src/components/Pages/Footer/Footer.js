@@ -17,8 +17,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h1 className='text-3xl  pb-5'>Contact Us</h1>
-                    <p><AiOutlineHome></AiOutlineHome> House-64, Block-B Road-10</p>
-                    <p className='pb-3'>Joydebpur, Gazipur, Bangladesh</p>
+                    <p className='pb-3'><AiOutlineHome></AiOutlineHome> House-64, Block-B, Road-10, Joydebpur, Gazipur, Bangladesh</p>
                     <p><BsTelephone></BsTelephone> </p>
                     <p className='py-2'>+008 01712755278</p>
                     <p className='py-2'><ImEarth></ImEarth></p>

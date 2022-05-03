@@ -30,7 +30,7 @@ const HeaderArea = () => {
             <div className={` duration-500 absolute w-full text-white ${open ? 'top-10' : 'top-[-520px] md:top-0'}`}>
                 <div className='bg-purple-500 md:flex md:px-5 lg:flex lg:px-10 xl:px-40 justify-between py-10'>
                     <div className=''>
-                        <Link to='/'><h1 className='text-3xl lg:text-5xl md:text-xl font-semibold'>Spice House</h1></Link>
+                        <Link to='/'><h1 className='text-3xl lg:text-5xl md:text-3xl font-semibold'>Spice House</h1></Link>
                     </div>
                     <div className='md:flex'>
 

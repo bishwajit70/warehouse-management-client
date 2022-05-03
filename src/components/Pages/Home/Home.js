@@ -42,7 +42,7 @@ const Home = () => {
             <Banner></Banner>
             <div>
 
-                <h1 className='text-5xl text-purple-600 font-semibold pt-10 pb-5'>Inventory Items</h1>
+                <h1 className='text-4xl md:text-5xl text-purple-600 font-semibold pt-10 pb-5'>Inventory Items</h1>
                 <div className='px-1 py-10 md:px-5 lg:px-10 xl:px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-y-10 gap-20'>
 
                     {
