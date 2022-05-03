@@ -37,7 +37,7 @@ const AddItem = () => {
 
 
     return (
-        <div className='w-11/12 md:w-3/12 mx-auto border-2 border-indigo-400 rounded inline-block mt-10 pt-8'>
+        <div className='w-11/12 md:w-6/12 lg:w-4/12 xl:w-4/12 mx-auto border-2 border-indigo-400 rounded inline-block mt-10 pt-8'>
             <h2 className='text-2xl pb-8 font-bold'>Add My Item</h2>
             <form onSubmit={handleAddMyItem} className='grid grid-cols-1 w-11/12 mx-auto' >
 
