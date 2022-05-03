@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import useProduct from '../../../hooks/useProduct';
 import ManageInventoryProduct from '../MangeInventoryProduct/ManageInventoryProduct';
 
 const ManageInventory = () => {
     const [products, setProducts] = useState([])
+
+
 
     useEffect(() => {
         const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
@@ -40,13 +41,13 @@ const ManageInventory = () => {
         <div className='pt-10'>
             <Link to='/addnewitem' className='bg-purple-500 py-3 inline-block px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700 '>Add New Item</Link>
             <div className='rounded-md md:mx-20 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
-            {
-                products.map(product => <ManageInventoryProduct
-                    key={product._id}
-                    product={product}
-                    handleDeleteInventoryItem={handleDeleteInventoryItem}
-                ></ManageInventoryProduct>)
-            }
+                {
+                    products.map(product => <ManageInventoryProduct
+                        key={product._id}
+                        product={product}
+                        handleDeleteInventoryItem={handleDeleteInventoryItem}
+                    ></ManageInventoryProduct>)
+                }
             </div>
 
         </div>

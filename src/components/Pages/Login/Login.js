@@ -61,7 +61,7 @@ const Login = () => {
     }
 
     return (
-        <div className='w-11/12 md:w-3/12 mx-auto border-2 border-indigo-400 rounded mt-10 pt-8'>
+        <div className='w-11/12 md:w-3/12 mx-auto border-2 inline-block border-indigo-400 rounded mt-10 pt-8'>
             <h2 className='text-4xl text-blue-600 font-bold pb-5'>Please Login</h2>
             <form onSubmit={handleSignInWithEmailPassword} className='w-11/12 py-5  grid mx-auto'>
 
@@ -79,7 +79,7 @@ const Login = () => {
                 </div>
             </form>
 
-            <input onClick={resetPassword} className='p-2 w-11/12 p-2 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700 cursor-pointer border-blue-700 rounded' type="submit" value="Reset Password" />
+            <input onClick={resetPassword} className='p-2 w-11/12 uppercase border-2 mb-2 text-xl text-white bg-blue-600 hover:bg-blue-800 duration-700 cursor-pointer border-blue-700 rounded' type="submit" value="Reset Password" />
             <SocialLogin></SocialLogin>
             <ToastContainer></ToastContainer>
         </div>
