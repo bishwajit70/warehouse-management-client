@@ -21,13 +21,3 @@ const auth = getAuth(app)
 export default auth;
 
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyChlh2dsOPK_ynrQGipvF__34NATh4y1z8",
-//     authDomain: "warehouse-management-332f6.firebaseapp.com",
-//     projectId: "warehouse-management-332f6",
-//     storageBucket: "warehouse-management-332f6.appspot.com",
-//     messagingSenderId: "980544896912",
-//     appId: "1:980544896912:web:c62af7f06a9437832b7d15"
-// };
-
-// process.env.REACT_APP_apiKey
