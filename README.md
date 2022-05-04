@@ -11,9 +11,11 @@ We are maintaining a warehouse of spices. We delivery our product with a quick r
 * Spices House App is designed to maintain a spices warehouse
 * Here user can register with an email and password and login with that same email and password
 * User can also login with social login system
-* User can add items, remove items, restock items with name, image, pirce, quantity, supplier name
-* User also can view his/her items and delete any of the items. 
-* User can provide information and for future purposes 
+* User can add items with name, image, pirce, quantity, supplier name etc.
+* User also can delivery item one by one
+* User can restock items with a quantity
+* User also can view his/her items . 
+* User can provide information for future. 
 
 
 ## Available Scripts
