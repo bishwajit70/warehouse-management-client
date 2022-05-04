@@ -7,6 +7,9 @@ const Inventory = () => {
     const { id } = useParams()
 
     const [product, setProduct] = useState({})
+    // const [newQty, setNewQty] = useState(0)
+    
+    // console.log(newQty)
 
     useEffect(() => {
 
@@ -22,18 +25,22 @@ const Inventory = () => {
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
-        // const { quantity , ...rest } = product
+        let { quantity , ...rest } = product
+        // console.log(qty, rest)
         // console.log(quantity, rest)
         // const newQuantity = event.target.quantity.value;
         // // console.log(newProduct);
         // setProduct(newProduct);
 
-        const quantity = event.target.quantity.value;
+        const newQuantity = event.target.quantity.value;
 
-        // const newProduct = { quantity: NewQuantity, ...rest }
-        // setProduct(newProduct);
+        // setNewQty(quantity);
 
-        const updatedQuantity = { quantity };
+        const newProduct = { quantity: newQuantity, ...rest }
+        console.log(newProduct)
+        setProduct(newProduct);
+
+        // const updatedQuantity = { quantity };
 
 
 
@@ -45,7 +52,7 @@ const Inventory = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedQuantity)
+            body: JSON.stringify(newProduct)
         })
             .then(res => res.json())
             .then(data => {
