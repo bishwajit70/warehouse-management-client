@@ -30,6 +30,8 @@ const Home = () => {
         return <Loading></Loading>
     };
 
+    console.log(user);
+
     const homeProducts = products.slice(0, 6)
 
     // let from = location.state?.from?.pathname || "/";

@@ -29,7 +29,12 @@ const Inventory = () => {
 
         const newQuantity = event.target.quantity.value;
 
+        if (newQuantity < 0) {
+            return alert("Please Input Positive Value")
+        }
+
         const newProduct = { quantity: newQuantity, ...rest }
+
         console.log(newProduct)
         setProduct(newProduct);
 
@@ -61,8 +66,8 @@ const Inventory = () => {
         let newQuantity;
         // console.log(typeof previousQty)
         if (previousQty < 1) {
-            return false
-        }else{
+            return alert("There Is Not Enough Stock. Please Re Stock.")
+        } else {
             newQuantity = previousQty - 1
         }
 
@@ -102,12 +107,12 @@ const Inventory = () => {
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
                         <form onSubmit={handleDelivery}>
-                            <input  className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
+                            <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
                         </form>
                         <div className='grid pt-5 grid-cols-1'>
                             <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
                             <form onSubmit={handleUpdateQuantity}>
-                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' />
+                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' required />
                                 <br />
                                 <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
                             </form>

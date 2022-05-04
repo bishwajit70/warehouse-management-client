@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Spices House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Spices House](https://warehouse-management-332f6.web.app).
+
+
+## Short Description
+
+We are maintaining a warehouse of spices. We delivery our product with a quick response and maintain the best service rule. You can trust us. We are ensureing the quality products with quality services.
+
+## Features
+* Spices House App is designed to maintain a spices warehouse
+* Here user can register with an email and password and login with that same email and password
+* User can also login with social login system
+* User can add items, remove items, restock items with name, image, pirce, quantity, supplier name
+* User also can view his/her items and delete any of the items. 
+* User can provide information and for future purposes 
+
 
 ## Available Scripts
 
