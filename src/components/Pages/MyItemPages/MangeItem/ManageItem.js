@@ -40,7 +40,7 @@ const ManageItem = () => {
     return (
         <div>
             <Link to='/additem' className='bg-purple-500 mt-10 py-3 inline-block px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700 '>Add  Item</Link>
-            <div className='rounded-md md:mx-20 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
+            <div className='rounded-md md:mx-2 lg:mx-10 xl:mx-10 text-left gap-2 border-2 p-3 mb-3 justify-around items-center'>
                 {
                     products.map(product => <ManageInventoryProduct
                         key={product._id}
