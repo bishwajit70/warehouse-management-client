@@ -8,7 +8,7 @@ const Inventory = () => {
 
     const [product, setProduct] = useState({})
     // const [newQty, setNewQty] = useState(0)
-    
+
     // console.log(newQty)
 
     useEffect(() => {
@@ -25,24 +25,13 @@ const Inventory = () => {
     const handleUpdateQuantity = event => {
         event.preventDefault()
 
-        let { quantity , ...rest } = product
-        // console.log(qty, rest)
-        // console.log(quantity, rest)
-        // const newQuantity = event.target.quantity.value;
-        // // console.log(newProduct);
-        // setProduct(newProduct);
+        const { quantity, ...rest } = product
 
         const newQuantity = event.target.quantity.value;
-
-        // setNewQty(quantity);
 
         const newProduct = { quantity: newQuantity, ...rest }
         console.log(newProduct)
         setProduct(newProduct);
-
-        // const updatedQuantity = { quantity };
-
-
 
         // Update data to the server
 
@@ -62,32 +51,41 @@ const Inventory = () => {
             })
     }
 
-    // const handleDelivery = event => {
-    //     event.preventDefault()
-    //     const previousQty = quantity;
+    const handleDelivery = (event) => {
+        event.preventDefault()
 
-    //     const quantity = previousQty-1;
+        const { quantity, ...rest } = product
 
-    //     const updatedQuantity = { quantity };
+        const previousQty = parseInt(quantity);
 
-    //     // Update data to the server
+        let newQuantity;
+        // console.log(typeof previousQty)
+        if (previousQty < 1) {
+            return false
+        }else{
+            newQuantity = previousQty - 1
+        }
 
-    //     const url = `http://localhost:5000/inventory/${id}`;
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(updatedQuantity)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             alert("Quantity Updated Successfully.");
-    //             event.target.reset();
-    //         })
+        const newProduct = { quantity: newQuantity, ...rest }
 
-    // }
+        setProduct(newProduct)
+
+        const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                alert("Quantity Updated Successfully.");
+                event.target.reset();
+            })
+
+    }
 
 
     return (
@@ -103,8 +101,8 @@ const Inventory = () => {
                     <p>Quantity : <small>{quantity}</small></p>
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
-                        <form>
-                            <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
+                        <form onSubmit={handleDelivery}>
+                            <input  className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
                         </form>
                         <div className='grid pt-5 grid-cols-1'>
                             <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
