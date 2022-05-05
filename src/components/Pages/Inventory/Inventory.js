@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-
 const Inventory = () => {
 
     const { id } = useParams()
 
     const [product, setProduct] = useState({})
-    // const [newQty, setNewQty] = useState(0)
-
-    // console.log(newQty)
 
     useEffect(() => {
 
@@ -64,7 +60,7 @@ const Inventory = () => {
         const previousQty = parseInt(quantity);
 
         let newQuantity;
-        // console.log(typeof previousQty)
+
         if (previousQty < 1) {
             return alert("There Is Not Enough Stock. Please Re Stock.")
         } else {
@@ -107,14 +103,14 @@ const Inventory = () => {
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
                         <form onSubmit={handleDelivery}>
-                            <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="Delivered" />
+                            <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="DELIVERED" />
                         </form>
                         <div className='grid pt-5 grid-cols-1'>
                             <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
                             <form onSubmit={handleUpdateQuantity}>
                                 <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' required />
                                 <br />
-                                <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="Re Stock" />
+                                <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="RE STOCK" />
                             </form>
                         </div>
                     </div>

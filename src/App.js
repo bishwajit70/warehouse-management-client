@@ -13,6 +13,7 @@ import ManageItem from './components/Pages/MyItemPages/MangeItem/ManageItem';
 import AddItem from './components/Pages/MyItemPages/AddItem/AddItem';
 import MyItem from './components/Pages/MyItemPages/MyItem/MyItem';
 import Footer from './components/Pages/Footer/Footer';
+import Blog from './components/Pages/Blog/Blog';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
           <Inventory></Inventory>
         </RequireAuth>}>
         </Route>
-
+        <Route path='/blogs' element={<Blog></Blog>}>Blogs</Route>  
 
 
         <Route path='/login' element={<Login></Login>}></Route>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='pt-10'>
-            <div className='grid grid-cols-1 justify-center px-1 py-10 bg-purple-200 md:px-5 lg:px-10 xl:px-40  md:grid-cols-3 gap-y-10 gap-20 text-left border-b-2 shadow-2xl'>
+            <div className='grid grid-cols-1 justify-center px-5 py-10 bg-purple-200 md:px-5 lg:px-10 xl:px-40  md:grid-cols-3 gap-y-10 gap-20 text-left border-b-2 shadow-2xl'>
                 <div>
                     <h1 className='text-3xl pb-5'>About Us</h1>
                     <p className='text-1xl '>We are maintaining a warehouse of spices. We delivery our product with a quick response and maintain the best service rule. You can trust us. We are ensureing the quality products with quality services.</p>

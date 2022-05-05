@@ -12,7 +12,7 @@ const SingleProduct = ({ product }) => {
 
 
     return (
-        <div className='rounded-lg hover:shadow-2xl hover:-mt-2 duration-500 bg-purple-50 border border-b-purple-300 border-l-purple-300 '>
+        <div className='rounded-lg hover:shadow-2xl hover:-mt-1 duration-500 bg-purple-50 border border-b-purple-300 border-l-purple-300 '>
             <div className='grid grid-flow-row'>
                 <img className='p-4 w-full mx-auto duration-700 rounded-tl-md rounded-tr-md' src={picture} alt="" />
                 <div className='text-left p-4 w-full'>

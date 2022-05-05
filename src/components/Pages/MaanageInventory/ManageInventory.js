@@ -5,8 +5,6 @@ import ManageInventoryProduct from '../MangeInventoryProduct/ManageInventoryProd
 const ManageInventory = () => {
     const [products, setProducts] = useState([])
 
-
-
     useEffect(() => {
         const url = 'https://frozen-inlet-73952.herokuapp.com/inventory'
         fetch(url)

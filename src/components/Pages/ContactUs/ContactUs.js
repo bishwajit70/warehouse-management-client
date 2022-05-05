@@ -32,7 +32,7 @@ const ContactUs = () => {
 
     return (
         <div>
-            <h1 className='text-4xl md:text-5xl text-purple-600 font-semibold pb-20'>Get In Touch</h1>
+            <h1 className='text-4xl pt-20 md:text-5xl text-purple-600 font-semibold pb-20'>Get In Touch</h1>
             <div className='px-1 py-10 bg-purple-50 md:px-5 lg:px-10 xl:px-40 grid md:grid-cols-2 gap-y-10 md:gap-4 gap-20 items-center shadow-xl'>
 
                 <div className='order-2 p-3 md:order-1 text-left'>

@@ -53,7 +53,7 @@ const HeaderArea = () => {
                         {
                             user ? <CustomLink className='p-1 lg:p-2 md:p-1 inline-block mb-px md:mb-0 uppercase' to='/manageinventory'>Manage Inventory</CustomLink> : ""
                         }
-
+                        <CustomLink to='/blogs' className='p-1 lg:p-2 md:p-1 inline-block mb-px md:mb-0 uppercase'>Blog</CustomLink>
                         {
                             user ? <Link onClick={handleSignOut} className='p-1 lg:p-2 md:p-1 uppercase' to='/'>Sign Out</Link> : <Link className='lg:p-2 md:p-1 uppercase' to='/login'>Login</Link>
                         }
