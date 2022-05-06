@@ -13,6 +13,7 @@ const AddNewItem = () => {
         const quantity = event.target.quantity.value;
         const supplier = event.target.supplier.value;
         const picture = event.target.picture.value;
+
         const email = user?.email;
         console.log(email);
         const inventoryItem = { name, price, description, quantity, supplier, picture, email }
