@@ -45,7 +45,7 @@ const Register = () => {
         return <Loading></Loading>
     }
     if (user) {
-        navigate('/login');
+        navigate('/');
     }
 
     return (

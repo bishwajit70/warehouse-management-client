@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
     return (
-        <div className='flex ms-150 mr-150 justify-between items-center'>
-            <div className='w-4/5 py-10'>
+        <div className='grid grid-cols-1 px-40 mx-auto w-full justify-between items-center'>
+            <div className='py-40'>
                 <h1 className='text-6xl font-bold'>Page Not Found</h1>
-                <p className='pt-10 text-xl'>We're sorry, but we can't find the page you were looking for. <Link className='text-orange-600 font-bold' to='/'>Go Home</Link></p>
+                <p className='pt-10 text-xl'>We're sorry, but we can't find the page you were looking for. <Link className='text-purple-600 font-bold' to='/'>Go Home</Link></p>
             </div>
-            <div className=''>
-                <img src="https://i.ibb.co/HXNnW6n/404.jpg" alt="" />
-            </div>
-
         </div>
     );
 };
