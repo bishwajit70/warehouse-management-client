@@ -6,6 +6,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import Loading from '../Loading/Loading';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -33,9 +34,12 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
-    const handleSignInWithEmailPassword = event => {
+    const handleSignInWithEmailPassword = async event => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        const url = 'https://frozen-inlet-73952.herokuapp.com/login'
+        const { data } = await axios.post(url, { email })
+        localStorage.setItem('accessToken', data.result)
     }
 
 

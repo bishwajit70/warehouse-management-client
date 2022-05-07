@@ -55,19 +55,24 @@ const Inventory = () => {
     const handleDelivery = (event) => {
         event.preventDefault()
 
-        const { quantity, ...rest } = product
+        const { quantity, sold, ...rest } = product
 
         const previousQty = parseInt(quantity);
 
+        const previousSold = parseInt(sold)
+
         let newQuantity;
+        let newSold;
 
         if (previousQty < 1) {
             return alert("There Is Not Enough Stock. Please Re Stock.")
-        } else {
-            newQuantity = previousQty - 1
         }
+        newQuantity = previousQty - 1
+        newSold = previousSold + 1
+        console.log(newSold)
+        
 
-        const newProduct = { quantity: newQuantity, ...rest }
+        const newProduct = { quantity: newQuantity, sold: newSold, ...rest }
 
         setProduct(newProduct)
 
@@ -82,7 +87,7 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                alert("Quantity Updated Successfully.");
+                // alert("Quantity Updated Successfully.");
                 event.target.reset();
             })
 
@@ -100,6 +105,7 @@ const Inventory = () => {
                     <p>Price : <small>{price}</small></p>
                     <p>Description: <small>{description}</small></p>
                     <p>Quantity : <small>{quantity}</small></p>
+                    <p>sold : <small>{product?.sold}</small></p>
                     <p>Supplier : <small>{supplier}</small></p>
                     <div className='pt-5'>
                         <form onSubmit={handleDelivery}>

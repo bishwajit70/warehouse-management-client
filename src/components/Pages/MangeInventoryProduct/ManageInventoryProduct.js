@@ -17,6 +17,8 @@ const ManageInventoryProduct = (props) => {
                 <div className='md:w-3/4'>
                     <p className='font-bold'>Description: <span className='font-normal'>{description}</span></p>
                     <p className='font-bold'>Quantity : <span className='font-normal'>{quantity}</span></p>
+                    
+                    <p className='font-bold'>Sold : <span className='font-normal'>{props.product?.sold}</span></p>
                     <p className='font-bold'>Supplier : <span className='font-normal'>{supplier}</span></p>
                 </div>
                 <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white w-full md:w-2/12 rounded duration-700 hover:bg-red-600'>DELETE</button>

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
@@ -7,14 +8,28 @@ import ManageInventoryProduct from '../../MangeInventoryProduct/ManageInventoryP
 const ManageItem = () => {
     const [products, setProducts] = useState([])
     const [user, loading, error] = useAuthState(auth);
-    const email = user.email;
+
 
     useEffect(() => {
-        const url = `https://frozen-inlet-73952.herokuapp.com/myitem/?email=${email}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+        const url = `https://frozen-inlet-73952.herokuapp.com/myitem?email=${user?.email}`
+
+        const getProducts = async () => {
+            const { data } = await axios.get(url, {
+                headers: {
+                    accessToken: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            setProducts(data);
+            console.log(localStorage.getItem('accessToken'))
+        }
+
+        getProducts();
+        // fetch(url, {
+
+        // })
+        //     .then(res => res.json())
+        //     .then(data => setProducts(data))
+    }, [user])
 
     const handleDeleteInventoryItem = (id) => {
         // console.log(id);

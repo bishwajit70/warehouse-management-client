@@ -15,7 +15,7 @@ const AddItem = () => {
         const picture = event.target.picture.value;
         const email = user.email;
         console.log(email);
-        const inventoryItem = { name, price, description, quantity, supplier, picture, email }
+        const inventoryItem = { name, price, description, quantity, supplier, picture, sold:0, email }
         console.log(inventoryItem);
 
         // send product to the server
