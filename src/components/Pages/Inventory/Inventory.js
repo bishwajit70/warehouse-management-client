@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const Inventory = () => {
-
     const { id } = useParams()
-
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-
         const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
         fetch(url)
             .then(res => res.json())
@@ -17,6 +14,7 @@ const Inventory = () => {
 
     const { _id, name, picture, price, description, quantity, supplier } = product
 
+    // handle update quantity function
 
     const handleUpdateQuantity = event => {
         event.preventDefault()
@@ -38,7 +36,7 @@ const Inventory = () => {
         console.log(newProduct)
         setProduct(newProduct);
 
-        // Update data to the server
+        // Update quantity to the server
 
         const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
         fetch(url, {
@@ -55,6 +53,8 @@ const Inventory = () => {
                 event.target.reset();
             })
     }
+
+    //handle delivery items function
 
     const handleDelivery = (event) => {
         event.preventDefault()
@@ -79,6 +79,8 @@ const Inventory = () => {
         const newProduct = { quantity: newQuantity, sold: newSold, ...rest }
 
         setProduct(newProduct)
+
+        // delivery items sending to server
 
         const url = `https://frozen-inlet-73952.herokuapp.com/inventory/${id}`;
         fetch(url, {
@@ -106,7 +108,7 @@ const Inventory = () => {
                 <div className='text-left'>
                     <h2 className='font-bold text-2xl pt-2'>Name : <small className='font-normal text-2xl'>{name}</small></h2>
                     <p className='font-bold text-xl pt-2'>Price : <small className='font-normal text-xl'>$ {price}</small></p>
-                    <p className='font-normal text-xl pt-2'>{description}</p>
+                    <p className='font-normal text-0xl pt-2'>{description}</p>
                     <p className='font-bold text-xl pt-2'>Quantity : <small className='font-normal text-xl'>{quantity} Units</small></p>
                     <p className='font-bold text-xl pt-2'>Sold : <small className='font-normal text-xl'>{product?.sold} Units</small></p>
                     <p className='font-bold text-xl pt-2'>Supplier : <small className='font-normal text-xl'>{supplier}</small></p>
