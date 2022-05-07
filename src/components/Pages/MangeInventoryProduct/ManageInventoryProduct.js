@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ManageInventoryProduct = (props) => {
     const { _id, name, picture, price, description, quantity, supplier } = props.product;
     const handleDeleteInventoryItem = props.handleDeleteInventoryItem
+
+    const navigate = useNavigate()
+    const handleUpadate = (id) => {
+        // console.log(id)
+        navigate(`/inventory/${id}`)
+    }
 
 
     return (
@@ -22,7 +29,15 @@ const ManageInventoryProduct = (props) => {
                     <p className='font-bold'>Sold : <span className='font-normal'>{props.product?.sold} Units</span></p>
 
                 </div>
-                <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 py-3 px-5 text-white w-full md:w-2/12 rounded duration-700 hover:bg-red-600'>DELETE</button>
+                <div className='grid md:w-3/4 mx-auto '>
+                    <button onClick={() => handleDeleteInventoryItem(_id)} className='bg-purple-500 mt-5 py-3 mb-10 px-5 text-white w-full md:w-full lg:w-8/12 rounded duration-700 hover:bg-red-600'>DELETE</button>
+
+
+                    <button onClick={() => handleUpadate(_id)} className='bg-purple-500 py-3 px-5 text-white w-full md:w-full lg:w-8/12 rounded duration-700 hover:bg-red-600'>UPDATE</button>
+                </div>
+
+
+
 
             </div>
 
