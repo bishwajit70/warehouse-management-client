@@ -16,7 +16,7 @@ const Footer = () => {
                     <h1 className='text-3xl pb-5'>Recent Blogs</h1>
                     <div className='grid font-semibold'>
                         <Link className='pb-3' to='/blogs'>Difference between Nodejs and JavaScript:</Link>
-                        <Link to='/blogs'>When should you use NodeJs and when should you use Mongodb?</Link>
+                        <Link className='pb-3' to='/blogs'>When should you use NodeJs and when should you use Mongodb?</Link>
                         <Link className='pb-3' to='/blogs'>Differences between SQL and noSQL databases.</Link>
                         <Link className='pb-3' to='/blogs'>What is the purpose of jwt and how does it work</Link>
                     </div>

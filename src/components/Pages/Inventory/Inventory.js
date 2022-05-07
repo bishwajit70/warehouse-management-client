@@ -103,7 +103,7 @@ const Inventory = () => {
         <div className='py-10'>
             <Link className='bg-purple-500 py-3 px-5 inline-block mb-5  rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link>
 
-            <div className='p-5 w-full border-2 rounded-md pt- md:w-4/12 mx-auto grid grid-cols-1 items-center justify-center '>
+            <div className='p-5 w-full border-2 rounded-md pt- md:w-8/12 lg:w-7/12 xl:w-6/12 mx-auto grid grid-cols-1 items-center justify-center '>
                 <img className='w-full pt-1' src={picture} alt="" />
                 <div className='text-left'>
                     <h2 className='font-bold text-2xl pt-2'>Name : <small className='font-normal text-2xl'>{name}</small></h2>
