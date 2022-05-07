@@ -15,7 +15,7 @@ const AddItem = () => {
         const picture = event.target.picture.value;
         const email = user.email;
         console.log(email);
-        const inventoryItem = { name, price, description, quantity, supplier, picture, sold:0, email }
+        const inventoryItem = { name, price, description, quantity, supplier, picture, sold: 0, email }
         console.log(inventoryItem);
 
         // send product to the server
@@ -38,7 +38,7 @@ const AddItem = () => {
 
     return (
         <div className='w-11/12 md:w-6/12 mb-10 lg:w-4/12 xl:w-4/12 mx-auto border-2 border-indigo-400 rounded inline-block mt-10 pt-8'>
-            <h2 className='text-2xl pb-8 font-bold'>Add My Item</h2>
+            <h2 className='text-2xl pb-8 font-bold'>Add New Item</h2>
             <form onSubmit={handleAddMyItem} className='grid grid-cols-1 w-11/12 mx-auto' >
 
                 <input className='p-2 border-2 mb-4 rounded border-purple-200' type="text" name="name" id="name" placeholder='Item Name' required />
