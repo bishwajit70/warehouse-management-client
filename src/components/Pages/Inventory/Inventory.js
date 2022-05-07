@@ -23,10 +23,14 @@ const Inventory = () => {
 
         const { quantity, ...rest } = product
 
-        const newQuantity = event.target.quantity.value;
+        let newQuantity = event.target.quantity.value;
+
+        let previousQuantity = parseInt(quantity)
 
         if (newQuantity < 0) {
             return alert("Please Input Positive Value")
+        } else {
+            newQuantity = previousQuantity + parseInt(newQuantity)
         }
 
         const newProduct = { quantity: newQuantity, ...rest }
@@ -70,7 +74,7 @@ const Inventory = () => {
         newQuantity = previousQty - 1
         newSold = previousSold + 1
         console.log(newSold)
-        
+
 
         const newProduct = { quantity: newQuantity, sold: newSold, ...rest }
 
@@ -93,20 +97,19 @@ const Inventory = () => {
 
     }
 
-
     return (
-        <div className='pt-10'>
+        <div className='py-10'>
             <Link className='bg-purple-500 py-3 px-5 inline-block mb-5  rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link>
 
             <div className='p-5 w-full border-2 rounded-md pt- md:w-4/12 mx-auto grid grid-cols-1 items-center justify-center '>
-                <img className='w-full pt-5' src={picture} alt="" />
+                <img className='w-full pt-1' src={picture} alt="" />
                 <div className='text-left'>
-                    <h2>Name : <small>{name}</small></h2>
-                    <p>Price : <small>{price}</small></p>
-                    <p>Description: <small>{description}</small></p>
-                    <p>Quantity : <small>{quantity}</small></p>
-                    <p>sold : <small>{product?.sold}</small></p>
-                    <p>Supplier : <small>{supplier}</small></p>
+                    <h2 className='font-bold text-2xl pt-2'>Name : <small className='font-normal text-2xl'>{name}</small></h2>
+                    <p className='font-bold text-xl pt-2'>Price : <small className='font-normal text-xl'>$ {price}</small></p>
+                    <p className='font-normal text-xl pt-2'>{description}</p>
+                    <p className='font-bold text-xl pt-2'>Quantity : <small className='font-normal text-xl'>{quantity} Units</small></p>
+                    <p className='font-bold text-xl pt-2'>Sold : <small className='font-normal text-xl'>{product?.sold} Units</small></p>
+                    <p className='font-bold text-xl pt-2'>Supplier : <small className='font-normal text-xl'>{supplier}</small></p>
                     <div className='pt-5'>
                         <form onSubmit={handleDelivery}>
                             <input className='cursor-pointer w-full mr-5 px-5 text-white font-bold bg-purple-600 py-3 rounded' type="submit" value="DELIVERED" />
@@ -114,7 +117,7 @@ const Inventory = () => {
                         <div className='grid pt-5 grid-cols-1'>
                             <h2 className='pb-5 font-bold text-xl text-center'>Want to Re-Stock?</h2>
                             <form onSubmit={handleUpdateQuantity}>
-                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' required />
+                                <input className='border-2 w-full p-2 mb-5 rounded-md border-purple-200' type="number" name="quantity" id="" autoComplete='off' placeholder='Re-Stock' required />
                                 <br />
                                 <input className='cursor-pointer w-full py-3 px-5 text-white font-bold bg-purple-600 rounded' type="submit" value="RE STOCK" />
                             </form>
