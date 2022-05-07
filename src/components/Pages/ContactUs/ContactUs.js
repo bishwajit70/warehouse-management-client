@@ -38,11 +38,11 @@ const ContactUs = () => {
                 <div className='order-2 p-3 md:order-1 text-left'>
 
                     <form onSubmit={handleSubmitContact} className='grid'>
-                        <input className='border-2 border-purple-200 p-2 mb-2 rounded-md' type="text" name="name" id="name" placeholder='Your Name' />
-                        <input className='border-2 p-2 border-purple-200 mb-2 rounded-md' type="email" name="email" id="email" placeholder='Your Email' />
-                        <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="address" id="address" cols="30" rows="2" placeholder='Address'></textarea>
-                        <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="requirements" id="requirements" cols="30" rows="3" placeholder='Requirements'></textarea>
-                        <input className='border-2 p-2 border-purple-200 mb-2 rounded-md' type="tel" name="telephone" id="telephone" placeholder='Telephone' />
+                        <input className='border-2 border-purple-200 p-2 mb-2 rounded-md' type="text" name="name" id="name" placeholder='Your Name' required />
+                        <input className='border-2 p-2 border-purple-200 mb-2 rounded-md' type="email" name="email" id="email" placeholder='Your Email' required />
+                        <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="address" id="address" cols="30" rows="2" placeholder='Address' required></textarea>
+                        <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="requirements" id="requirements" cols="30" rows="3" placeholder='Requirements' required></textarea>
+                        <input className='border-2 p-2 border-purple-200 mb-2 rounded-md' type="tel" name="telephone" id="telephone" placeholder='Telephone' required />
                         <input className='bg-purple-500 hover:bg-purple-600 uppercase text-xl text-white duration-700 p-2 rounded-md cursor-pointer' type="submit" Value="Submit" />
 
                     </form>
