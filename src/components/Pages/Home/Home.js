@@ -6,6 +6,7 @@ import BestSale from '../BestSale/BestSale';
 import ContactUs from '../ContactUs/ContactUs';
 import Banner from '../HeaderArea/Banner/Banner';
 import Loading from '../Loading/Loading';
+import OurSuppliers from '../OurSuppliers/OurSuppliers';
 import SingleProduct from '../SingleProduct/SingleProduct';
 import Discount from './Discount/Discount';
 
@@ -63,6 +64,7 @@ const Home = () => {
             {
                 user ? <Link className='bg-purple-500 inline-block py-3 px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700' to='/manageinventory'>Manage Inventory</Link> : ""
             }
+            <OurSuppliers></OurSuppliers>
             <Discount></Discount>
             <BestSale></BestSale>
             <ContactUs></ContactUs>
