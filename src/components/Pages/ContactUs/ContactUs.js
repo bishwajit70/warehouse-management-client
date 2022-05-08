@@ -43,7 +43,7 @@ const ContactUs = () => {
                         <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="address" id="address" cols="30" rows="2" placeholder='Address' required></textarea>
                         <textarea className='border-2 border-purple-200 p-2 mb-2 rounded-md' name="requirements" id="requirements" cols="30" rows="3" placeholder='Requirements' required></textarea>
                         <input className='border-2 p-2 border-purple-200 mb-2 rounded-md' type="tel" name="telephone" id="telephone" placeholder='Telephone' required />
-                        <input className='bg-purple-500 hover:bg-purple-600 uppercase text-xl text-white duration-700 p-2 rounded-md cursor-pointer' type="submit" Value="Submit" />
+                        <input className='bg-purple-500 hover:bg-purple-600 uppercase text-xl text-white duration-700 p-2 rounded-md cursor-pointer' type="submit" value="Submit" />
 
                     </form>
                 </div>
