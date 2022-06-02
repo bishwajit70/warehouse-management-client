@@ -33,8 +33,6 @@ const ManageInventory = () => {
 
     }
 
-
-
     return (
         <div className='pt-10'>
             <Link to='/additem' className='bg-purple-500 py-3 inline-block px-5 mb-10 rounded-md text-white text-xl font-bold duration-700 hover:bg-purple-700 '>Add New Item</Link>

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     const navigate = useNavigate()
     const [signInWithGoogle, googleUser, googleLoading, GoogleError] = useSignInWithGoogle(auth);
+    
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     if(googleUser || githubUser){
         navigate('/')

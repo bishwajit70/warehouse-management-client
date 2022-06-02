@@ -5,7 +5,7 @@ This project was bootstrapped with [Spices House](https://warehouse-management-3
 
 ## Short Description
 
-We are maintaining a warehouse of spices. We delivery our product with a quick response and maintain the best service rule. You can trust us. We are ensureing the quality products with quality services.
+We are maintaining a warehouse/inventory of spices. We delivery our product with a quick response and maintain the best service rule. You can trust us. We are ensureing the quality products with quality services.
 
 ## Features
 * Spices House App is designed to maintain a spices warehouse

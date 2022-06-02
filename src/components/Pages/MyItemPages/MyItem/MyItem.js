@@ -23,9 +23,11 @@ const MyItem = () => {
             })
             setProducts(data);
             console.log(localStorage.getItem('accessToken'))
+            
         }
 
         getProducts();
+        
         // fetch(url, {
 
         // })
@@ -33,6 +35,7 @@ const MyItem = () => {
         //     .then(data => setProducts(data))
     }, [user])
 
+    
 
 
     if (loading) {
@@ -40,8 +43,6 @@ const MyItem = () => {
     };
 
     const myProducts = products
-
-
 
 
     return (
